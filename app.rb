@@ -15,10 +15,10 @@ require_relative 'models/contact'
 #     { first_name: 'Corinne', last_name: 'Babel', phone_number: '1234567890' }
 #   ]
 
-  @contacts = contact_attributes.map do |attr|
-    Contact.new(attr)
-  end
-end
+#   @contacts = contact_attributes.map do |attr|
+#     Contact.new(attr)
+#   end
+# end
 
 get '/' do
   @contacts = Contact.all
@@ -26,6 +26,6 @@ get '/' do
 end
 
 get '/contacts/:id'
-  @contact = Contact.find_by id: 'params[:id]'
+  @contact = Contact.find(params[:id])
   erb :show
 end
