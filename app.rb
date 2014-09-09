@@ -25,7 +25,7 @@ get '/' do
   erb :index
 end
 
-get '/contacts/:id'
+get '/contacts/:id' do
   @contact = Contact.find(params[:id])
   erb :show
 end
